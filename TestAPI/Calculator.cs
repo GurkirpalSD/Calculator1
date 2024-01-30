@@ -36,6 +36,15 @@ namespace MyApp.Namespace
             decimal result = num1 / num2;
             return Ok(new { result });
         }
-
+        [HttpGet("modulo")]
+        public IActionResult Modulo(decimal num1, decimal num2)
+        {
+            if (num2 == 0)
+            {
+                return BadRequest("Cannot calculate modulo by zero");
+            }
+            decimal result = num1 % num2;
+            return Ok(new { result });
+        }
     }
 }
