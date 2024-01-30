@@ -19,6 +19,23 @@ namespace MyApp.Namespace
             decimal result = num1 - num2;
             return Ok(new { result });
         }
+        [HttpGet("multiply")]
+        public IActionResult Multiply(decimal num1, decimal num2)
+        {
+            decimal result = num1 * num2;
+            return Ok(new { result });
+        }
+
+        [HttpGet("divide")]
+        public IActionResult Divide(decimal num1, decimal num2)
+        {
+            if (num2 == 0)
+            {
+                return BadRequest("Cannot divide by zero");
+            }
+            decimal result = num1 / num2;
+            return Ok(new { result });
+        }
 
     }
 }
