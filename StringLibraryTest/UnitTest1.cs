@@ -217,4 +217,74 @@ public class UnitTest1
         // Assert
         Assert.AreEqual(expectedProduct, actualProduct);
     }
+ [TestMethod]
+    public void Test_Divide_TwoPositiveNumbers_ReturnsCorrectQuotient()
+    {
+        // Arrange
+        decimal number1 = 10.0m;
+        decimal number2 = 2.0m;
+        decimal expectedQuotient = 5.0m;
+
+        // Act
+        decimal actualQuotient = StringLibrary.Divide(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedQuotient, actualQuotient);
+    }
+    [TestMethod]
+    public void Test_Divide_PositiveDividendAndNegativeDivisor_ReturnsCorrectQuotient()
+    {
+        // Arrange
+        decimal number1 = 10.0m;
+        decimal number2 = -2.0m;
+        decimal expectedQuotient = -5.0m;
+
+        // Act
+        decimal actualQuotient = StringLibrary.Divide(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedQuotient, actualQuotient);
+    }
+ [TestMethod]
+    public void Test_Divide_NegativeDividendAndPositiveDivisor_ReturnsCorrectQuotient()
+    {
+        // Arrange
+        decimal number1 = -10.0m;
+        decimal number2 = 2.0m;
+        decimal expectedQuotient = -5.0m;
+
+        // Act
+        decimal actualQuotient = StringLibrary.Divide(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedQuotient, actualQuotient);
+    }
+   [TestMethod]
+    public void Test_Divide_ZeroDividend_ReturnsZero()
+    {
+        // Arrange
+        decimal number1 = 0m;
+        decimal number2 = 10.0m;
+        decimal expectedQuotient = 0m;
+
+        // Act
+        decimal actualQuotient = StringLibrary.Divide(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedQuotient, actualQuotient);
+    }
+   [TestMethod]
+public void Test_Divide_TwoNegativeNumbers_ReturnsCorrectQuotient()
+{
+    // Arrange
+    decimal number1 = -10.0m;
+    decimal number2 = -2.0m;
+    decimal expectedQuotient = 5.0m;
+
+    // Act
+    decimal actualQuotient = StringLibrary.Divide(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedQuotient, actualQuotient);
+}
 }
