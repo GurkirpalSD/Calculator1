@@ -90,6 +90,62 @@ public class UnitTest1
         // Assert
         Assert.AreEqual(expectedDifference, actualDifference);
     }
-    
+     [TestMethod]
+     
+    public void Test_Subtract_PositiveAndNegativeNumbers_ReturnsCorrectDifference()
+    {
+        // Arrange
+        decimal number1 = 5.5m;
+        decimal number2 = -2.3m;
+        decimal expectedDifference = 7.8m;
 
+        // Act
+        decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedDifference, actualDifference);
+    }
+  [TestMethod]
+    public void Test_Subtract_TwoNegativeNumbers_ReturnsCorrectDifference()
+    {
+        // Arrange
+        decimal number1 = -5.5m;
+        decimal number2 = -2.3m;
+        decimal expectedDifference = -3.2m;
+
+        // Act
+        decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedDifference, actualDifference);
+    }
+ [TestMethod]
+    public void Test_Subtract_FromZero_ReturnsNegativeOfSecondNumber()
+    {
+        // Arrange
+        decimal number1 = 0m;
+        decimal number2 = 7.9m;
+        decimal expectedDifference = -7.9m;
+
+        // Act
+        decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedDifference, actualDifference);
+    }
+  [TestMethod]
+    public void Test_Subtract_TwoZeroes_ReturnsZero()
+    {
+        // Arrange
+        decimal number1 = 0m;
+        decimal number2 = 0m;
+        decimal expectedDifference = 0m;
+
+        // Act
+        decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedDifference, actualDifference);
+    }
+    
 }
