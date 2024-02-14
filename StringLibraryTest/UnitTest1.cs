@@ -147,5 +147,74 @@ public class UnitTest1
         // Assert
         Assert.AreEqual(expectedDifference, actualDifference);
     }
-    
+      [TestMethod]
+    public void Test_Multiply_TwoPositiveNumbers_ReturnsCorrectProduct()
+    {
+        // Arrange
+        decimal number1 = 2.5m;
+        decimal number2 = 3.2m;
+        decimal expectedProduct = 8.0m;
+
+        // Act
+        decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedProduct, actualProduct);
+    }
+ [TestMethod]
+    public void Test_Multiply_PositiveAndNegativeNumbers_ReturnsCorrectProduct()
+    {
+        // Arrange
+        decimal number1 = 2.5m;
+        decimal number2 = -3.2m;
+        decimal expectedProduct = -8.0m;
+
+        // Act
+        decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedProduct, actualProduct);
+    }
+  [TestMethod]
+    public void Test_Multiply_TwoNegativeNumbers_ReturnsCorrectProduct()
+    {
+        // Arrange
+        decimal number1 = -2.5m;
+        decimal number2 = -3.2m;
+        decimal expectedProduct = 8.0m;
+
+        // Act
+        decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedProduct, actualProduct);
+    }
+  [TestMethod]
+    public void Test_Multiply_OneZero_ReturnsZero()
+    {
+        // Arrange
+        decimal number1 = 0m;
+        decimal number2 = 7.9m;
+        decimal expectedProduct = 0m;
+
+        // Act
+        decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedProduct, actualProduct);
+    }
+[TestMethod]
+    public void Test_Multiply_TwoZeroes_ReturnsZero()
+    {
+        // Arrange
+        decimal number1 = 0m;
+        decimal number2 = 0m;
+        decimal expectedProduct = 0m;
+
+        // Act
+        decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+        // Assert
+        Assert.AreEqual(expectedProduct, actualProduct);
+    }
 }
